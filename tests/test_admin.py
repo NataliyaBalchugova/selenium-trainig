@@ -3,6 +3,7 @@ from selenium.common import NoSuchElementException
 from selenium.webdriver.chrome import webdriver
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from data import catalog_id, customers_id, modules_id, reports_id, settings_id, translations_id
 
 
 @pytest.fixture
@@ -32,15 +33,9 @@ def test_admin(driver):
     driver.find_element(By.ID, "doc-logotype").click()
     # Catalog
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Catalog']").click()
+    for elmnt in catalog_id:
+        driver.find_element(By.ID, elmnt).click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-product_groups").click()
-    driver.find_element(By.ID, "doc-option_groups").click()
-    driver.find_element(By.ID, "doc-manufacturers").click()
-    driver.find_element(By.ID, "doc-suppliers").click()
-    driver.find_element(By.ID, "doc-delivery_statuses").click()
-    driver.find_element(By.ID, "doc-sold_out_statuses").click()
-    driver.find_element(By.ID, "doc-quantity_units").click()
-    driver.find_element(By.XPATH, "//span[@class='name' and text()='CSV Import/Export']").click()
     # Countries
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Countries']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
@@ -50,8 +45,8 @@ def test_admin(driver):
     # Customers
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Customers']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-csv").click()
-    driver.find_element(By.ID, "doc-newsletter").click()
+    for elmnt in customers_id:
+        driver.find_element(By.ID, elmnt).click()
     # Geo Zones
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Geo Zones']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
@@ -62,12 +57,8 @@ def test_admin(driver):
     # Modules
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Modules']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-customer").click()
-    driver.find_element(By.ID, "doc-shipping").click()
-    driver.find_element(By.ID, "doc-payment").click()
-    driver.find_element(By.ID, "doc-order_total").click()
-    driver.find_element(By.ID, "doc-order_success").click()
-    driver.find_element(By.ID, "doc-order_action").click()
+    for elmnt in modules_id:
+        driver.find_element(By.ID, elmnt).click()
     # Orders
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Orders']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
@@ -78,20 +69,13 @@ def test_admin(driver):
     # Reports
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Reports']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-monthly_sales").click()
-    driver.find_element(By.ID, "doc-most_sold_products").click()
-    driver.find_element(By.ID, "doc-most_shopping_customers").click()
+    for elmnt in reports_id:
+        driver.find_element(By.ID, elmnt).click()
     # Settings
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Settings']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-store_info").click()
-    driver.find_element(By.ID, "doc-defaults").click()
-    driver.find_element(By.ID, "doc-general").click()
-    driver.find_element(By.ID, "doc-listings").click()
-    driver.find_element(By.ID, "doc-images").click()
-    driver.find_element(By.ID, "doc-checkout").click()
-    driver.find_element(By.ID, "doc-advanced").click()
-    driver.find_element(By.ID, "doc-security").click()
+    for elmnt in settings_id:
+        driver.find_element(By.ID, elmnt).click()
     # Slides
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Slides']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
@@ -102,8 +86,8 @@ def test_admin(driver):
     # Translations
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Translations']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
-    driver.find_element(By.ID, "doc-scan").click()
-    driver.find_element(By.XPATH, "//span[@class='name' and text()='CSV Import/Export']").click()
+    for elmnt in translations_id:
+        driver.find_element(By.ID, elmnt).click()
     # Users
     driver.find_element(By.XPATH, "//span[@class='name' and text()='Users']").click()
     assert is_element_present(driver, By.TAG_NAME, "h1")
