@@ -17,3 +17,7 @@ settings_id = ["doc-store_info", "doc-defaults", "doc-general", "doc-listings", 
 
 # Translations ids
 translations_id = ["doc-scan", "doc-csv"]
+
+# Titles ids
+titles_id = ['Appearence', 'Catalog', 'Countries', 'Currencies', 'Customers', 'Geo Zones', 'Languages', 'Modules',
+             'Orders', 'Pages', 'Reports', 'Settings', 'Slides', 'Tax', 'Translations', 'Users', 'vQmods']
