@@ -19,5 +19,19 @@ settings_id = ["doc-store_info", "doc-defaults", "doc-general", "doc-listings", 
 translations_id = ["doc-scan", "doc-csv"]
 
 # Titles ids
-titles_id = ['Appearence', 'Catalog', 'Countries', 'Currencies', 'Customers', 'Geo Zones', 'Languages', 'Modules',
-             'Orders', 'Pages', 'Reports', 'Settings', 'Slides', 'Tax', 'Translations', 'Users', 'vQmods']
+titles = ['Appearence', 'Catalog', 'Countries', 'Currencies', 'Customers', 'Geo Zones', 'Languages', 'Modules',
+          'Orders', 'Pages', 'Reports', 'Settings', 'Slides', 'Tax', 'Translations', 'Users', 'vQmods']
+
+# Matching titles and id
+titles_ids = {
+    'Appearance': "doc-logotype",
+    'Catalog': catalog_id,
+    'Customers': customers_id,
+    'Languages': "doc-storage_encoding",
+    'Modules': modules_id,
+    'Orders': "doc-order_statuses",
+    'Reports': reports_id,
+    'Settings': settings_id,
+    'Tax': "doc-tax_rates",
+    'Translations': translations_id,
+}
